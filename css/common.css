@@ -1,0 +1,76 @@
+@charset "utf-8"; .row { margin: 0 auto; padding: 0 10px } 
+
+/* header */
+#header h1 { color: rgba(0, 0, 0, .9); position: absolute; left: 1%; top: 20px; display: inline-block; z-index: 20; } 
+.homeLogo.logo1.active { display: none; } 
+#header .btn { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); } 
+#header { position:relative; } 
+#header .headerFixed { position: fixed; left: 0; right: 0; top: 0; height: 100px; background: #fff; z-index: 9999; } 
+#header .open { display: block; position: fixed; right: 50px; transform: translateY(-50%); font-size: 30px; cursor: pointer; z-index: 999999999999999999; } 
+#header .row { position: relative } 
+
+@keyframes cdAni { 
+    0% { transform: translateX(1000px); opacity: 0;} 
+    100% { transform: translateY(0); opacity: 1;} 
+ }
+
+
+/* open */
+.cd-nav-trigger { position: absolute; z-index: 30; right: 0%; top: 20px; height: 54px; width: 54px; /*background-color: #243040; */
+ background-color: rgba(255,255,255,0.9); border-radius: 0%; /* image replacement */
+ overflow: hidden; text-indent: 100%; white-space: nowrap; -webkit-transition: -webkit-transform 0.5s; -moz-transition: -moz-transform 0.5s; transition: transform 0.5s; transition: .5s all; } 
+ .cd-nav-trigger .cd-nav-icon { /* icon created in CSS */
+position: absolute; left: 50%; top: 50%; bottom: auto; right: auto; -webkit-transform: translateX(-50%) translateY(-50%); -moz-transform: translateX(-50%) translateY(-50%); -ms-transform: translateX(-50%) translateY(-50%); -o-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%); width: 30px; height: 2px; background-color: #333; } 
+.cd-nav-trigger .cd-nav-icon::before, .cd-nav-trigger .cd-nav-icon:after { /* upper and lower lines of the menu icon */
+content: ''; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background-color: inherit; /* Force Hardware Acceleration in WebKit */
+-webkit-transform: translateZ(0); -moz-transform: translateZ(0); -ms-transform: translateZ(0); -o-transform: translateZ(0); transform: translateZ(0); -webkit-backface-visibility: hidden; backface-visibility: hidden; -webkit-transition: -webkit-transform 0.5s, width 0.5s, top 0.3s; -moz-transition: -moz-transform 0.5s, width 0.5s, top 0.3s; transition: transform 0.5s, width 0.5s, top 0.3s; } 
+.cd-nav-trigger .cd-nav-icon::before { -webkit-transform-origin: right top; -moz-transform-origin: right top; -ms-transform-origin: right top; -o-transform-origin: right top; transform-origin: right top; -webkit-transform: translateY(-10px); -moz-transform: translateY(-10px); -ms-transform: translateY(-10px); -o-transform: translateY(-10px); transform: translateY(-10px); } 
+.open.on .cd-nav-trigger .cd-nav-icon::before { width: 50%; -webkit-transform: translateY(0px) rotate(45deg); -moz-transform: translateY(0px) rotate(45deg); -ms-transform: translateY(0px) rotate(45deg); -o-transform: translateY(0px) rotate(45deg); transform: translateY(0px) rotate(45deg); } 
+.cd-nav-trigger .cd-nav-icon::after { -webkit-transform-origin: right bottom; -moz-transform-origin: right bottom; -ms-transform-origin: right bottom; -o-transform-origin: right bottom; transform-origin: right bottom; -webkit-transform: translateY(10px); -moz-transform: translateY(10px); -ms-transform: translateY(10px); -o-transform: translateY(10px); transform: translateY(10px); } 
+.open.on .cd-nav-trigger .cd-nav-icon::after { width: 50%; -webkit-transform: translateY(0px) rotate(-45deg); -moz-transform: translateY(0px) rotate(-45deg); -ms-transform: translateY(0px) rotate(-45deg); -o-transform: translateY(0px) rotate(-45deg); transform: translateY(0px) rotate(-45deg); } 
+
+
+/* cd */
+#header .cd { position: relative; display:none; animation: cdAniOut 1.3s; z-index: 9999999; top: 0; left: 0; height: 100%; width: 100%; background-color: #fff; } 
+#header .cd.active { display: block; } 
+#header .cd_full { max-width: 1024px; margin: 0 auto; padding: 100px 15px; animation: cdAni 1s;}
+#header .cd_nav { float: left; width: 60%; padding-bottom: 0 0 100px; } 
+#header .cd_full h2 { position: relative; font-size: 24px; font-weight: bold; padding: 8px 0 50px; width: 200px; } 
+#header .cd_full h2:after { content: ''; position: absolute; bottom: 18px; left: 0; width: 54px; height: 1px; background: #000; } 
+#header .cd_nav .cdSection .first { font-size: 30px; padding: 10px 0 15px; } 
+#header .cd_nav .cdSection .first.intro { padding: 50px 0 15px; } 
+#header .cd_nav2 { float: left; width: 40%; color: #252525; } 
+.sectionBig>li { padding: 50px 0 0px } 
+.sectionBig a { color: rgba(0, 0, 0, 0.8) } 
+.sectionSmall { padding: 30px 0 25px; } 
+.sectionSmall li { float: left; padding: 0 25px 0 0; } 
+.sectionSmall li a { font-size: 17px; } 
+.nav2_full { width: 335px; } 
+.nav2_full .nav2_full_right { text-align: right; padding: 50px 0 0; } 
+.nav2_full .nav2_full_right ul li { margin-bottom: 60px;; } 
+.cd_nav2 h3 { font-size: 25px; display: inline-block; line-height: 35px; } 
+.cd_nav2 p { font-size: 1.2rem; } 
+.nav2_full_right ul li div { font-size: 19.2px; margin-bottom: 20px; } 
+.cd_nav2 .cd_sns img { width: 45px; height: 45px; } 
+.cd_nav2 .cd_sns img~img { margin: 0 0 0 5px; } 
+
+
+/* section */
+#section.active { display: none; }
+
+
+/* nav 구역 */
+#nav { position: absolute; top: 0px; background-color: #fff; left: 0; width: 100%; z-index: 13; margin: 0px auto 0 auto; } 
+#nav .navUl { overflow: hidden; list-style-type: none; width: 1200px; padding-left: 150px; padding-right: 150px; box-sizing: border-box; margin: 0 auto; } 
+#nav .navUl.active { display: none; } 
+#nav .navUl .menu { float: left; width: 20%; text-align: center; } 
+.depth1 { padding: 0; font-size: 18px; letter-spacing: -0.3px; text-align: center; margin: 0 auto; padding: 0 10px; display: block; line-height: 100px; box-sizing: border-box; } 
+.depth1>a { transition: all 0.5s; } 
+.depth1>a:hover { color: red } 
+.depth2>ul { list-style-type: none; padding: 0; margin: 0; color: #888; } 
+.depth2>ul>li>a { padding: 5px 0; border-radius: 5px 5px; display: block; transition: all 0.5s; height: 30px; line-height: 30px; } 
+.depth2>ul>li>a:hover { color: red } 
+#nav .navUl .depth2 { display: none; height: 235px; overflow: hidden; font-size: 14px; } 
+
+
+/* footer 구역 */
